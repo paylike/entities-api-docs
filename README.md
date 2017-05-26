@@ -1,7 +1,5 @@
 # Pawns API
 
-## Usage
-
 - [Basics](#basics)
 - [Entities](#entities)
 	- [Create an entity](#create-an-entity)
