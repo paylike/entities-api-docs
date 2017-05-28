@@ -1,6 +1,10 @@
 # Pawns API
 
 - [Basics](#basics)
+- [Identities](#identities)
+	- [Create an identity](#create-an-identity)
+- [Privileges](#privileges)
+	- [Create a privilege](#create-an-privilege)
 - [Entities](#entities)
 	- [Create an entity](#create-an-entity)
 	- [Fetch an entity](#fetch-an-entity)
@@ -31,6 +35,23 @@ This API is exposed using the HTTP protocol.
 Any response body must be either `JSON` encoded with a `Content-Type` header
 set to `application/json` or binary with a corresponding `Content-Type` (e.g.
 for file uploads).
+
+#### Authentication and authorization
+
+Most endpoints require you to authenticate. [Create an identity](#create-an-
+identity) to get an API key.
+
+Supply an API key as the username part of a HTTP basic authentication.
+
+```shell
+Authorization: Basic $(echo $API_KEY | base64)
+```
+
+Using cURL:
+
+```shell
+curl -i -u $API_KEY https://pawns/entities/ping
+```
 
 ### Response
 
@@ -69,6 +90,44 @@ curl -i https://pawns/entities/$ID \
 
 A successful request will return a `200` status code.
 
+## Identities
+
+### Create an identity
+
+`/identities`
+
+This endpoint accepts no data.
+
+This endpoint requires no authentication.
+
+Returns:
+
+```js
+{
+	id: String,
+	key: String,
+}
+```
+
+## Privileges
+
+### Create a privilege
+
+So far only a single type of privilege exists. Thus having a privilege
+implicitly means read and write access to an entity.
+
+`/privileges`
+
+```js
+{
+	identityId: String,
+	entityId: String,
+}
+```
+
+To create a new privilege, the authenticated identity must itself have a
+privilege for the same entity.
+
 ## Entities
 
 ### Create an entity
@@ -98,6 +157,9 @@ Set one off `individual` or `corporation` to `true`.
 	country: String,		// ISO 3166-1 alpha2 code, Country of incorporation
 }
 ```
+
+Creating an entity automatically adds a privilege of the creating identity and
+the new entity.
 
 ### Fetch an entity
 
