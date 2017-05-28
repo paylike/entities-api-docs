@@ -197,10 +197,12 @@ owner of `entities[1]`.
 
 `/files`
 
+Requires a `Content-Type` HTTP header with the media/mime type of the file
+(e.g. image/jpeg).
+
 Optional HTTP headers:
 
 ```
-Content-Type	# Media/mime type of the file (e.g. image/jpeg)
 X-Filename		# Name of file
 ```
 
