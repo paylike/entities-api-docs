@@ -17,6 +17,7 @@
 - [Documents](#documents)
 	- [Create a document](#create-a-document)
 	- [Fetch a document](#fetch-a-document)
+	- [Search documents](#search-documents)
 - [Files](#files)
 	- [Create (upload) a file](#create-upload-a-file)
 	- [Fetch (download) a file](#fetch-download-a-file)
@@ -197,6 +198,14 @@ owner of `entities[1]`.
 ### Fetch a document
 
 `/documents/:id`
+
+### Search documents
+
+```
+/documents?
+	entityId
+	residenceIdId
+```
 
 ## Files
 
