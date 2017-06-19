@@ -7,6 +7,7 @@
 - [Residences](#residences)
 	- [Create a residence](#create-a-residence)
 	- [Fetch a residence](#fetch-a-residence)
+	- [Search residences](#search-residences)
 - [Links](#links)
 	- [Create a link](#create-a-link)
 	- [Search links](#search-links)
@@ -121,6 +122,12 @@ Set one off `individual` or `corporation` to `true`.
 ### Fetch a residence
 
 `/residences/:id`
+
+### Search residences
+
+```
+/residences?entityId=:entityId
+```
 
 ## Links
 
