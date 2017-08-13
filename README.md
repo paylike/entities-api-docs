@@ -260,9 +260,7 @@ owner of `entities[1]`.
 	fileId: uuid.parse(body.fileId),
 
 	// optional
-	hasPhoto: Boolean,
-	hasAddress: Boolean,
-	hasName: Boolean,
+	tags: Array(String),
 
 	// specifies that this document is related somehow to a residence, it
 	// might be a "proof of address".
