@@ -58,7 +58,8 @@ curl -i -u $API_KEY https://pawns/entities/ping
 All successful responses will have status codes in the 200-299 range.
 
 The content type, if data is returned, will be `application/x-ndjson;
-charset=utf-8`.
+charset=utf-8`. [NDJSON](http://ndjson.org/) simply means JSON but with top
+level arrays delimited by newlines.
 
 ### Create
 
