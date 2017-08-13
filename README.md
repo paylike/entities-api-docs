@@ -222,7 +222,7 @@ registries or social security systems.
 
 ## Relationships
 
-Relationships are way to specify how two entities may be related.
+Relationships are a way to describe how two entities are related.
 
 ### Create a relationship
 
