@@ -135,7 +135,7 @@ privilege for the same entity.
 
 `/entities`
 
-Set one off `individual` or `corporation` to `true`.
+Set one of `individual` or `corporation` to `true`.
 
 ```js
 {
