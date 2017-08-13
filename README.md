@@ -61,6 +61,15 @@ The content type, if data is returned, will be `application/x-ndjson;
 charset=utf-8`. [NDJSON](http://ndjson.org/) simply means JSON but with top
 level arrays delimited by newlines.
 
+Error codes:
+
+```
+400 Validation error
+401 Missing or unknown API key
+403 Forbidden (API key OK, but no access)
+404 Unknown URL
+```
+
 ### Create
 
 Use the HTTP `POST` method to submit data.
@@ -144,7 +153,7 @@ Set one of `individual` or `corporation` to `true`.
 
 	name: String,			// legal name
 
-	// only if "individual" is "true"
+	// registered birth or official incorporation
 	birth: {
 		date: {
 			year: Number,	// four digits year
@@ -153,9 +162,6 @@ Set one of `individual` or `corporation` to `true`.
 		},
 		country: String,	// ISO 3166-1 alpha2 code
 	},
-
-	// only if "corporation" is "true"
-	country: String,		// ISO 3166-1 alpha2 code, Country of incorporation
 }
 ```
 
