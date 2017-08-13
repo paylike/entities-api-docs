@@ -219,7 +219,7 @@ registries or social security systems.
 	system: {
 		id: String*,	// identifier of the external system (length: 1-64)
 		key: String*,	// primary key in the external system (length: 1-128)
-	}
+	},
 }
 ```
 
