@@ -210,7 +210,7 @@ owner of `entities[1]`.
 ```
 /documents?
 	entityId
-	residenceIdId
+	residenceId
 ```
 
 `entityId` is required.
