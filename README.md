@@ -130,6 +130,8 @@ Set one off `individual` or `corporation` to `true`.
 /residences?entityId=:entityId
 ```
 
+`entityId` is required.
+
 ## Links
 
 Provides a way of linking an entity to external registries such as business
@@ -153,6 +155,8 @@ registries or social security systems.
 
 `/links?entityId=:entityId`
 
+`entityId` is required.
+
 ## Relationships
 
 Relationships are way to specify how two entities may be related.
@@ -172,6 +176,8 @@ owner of `entities[1]`.
 ### Search relationships
 
 `/links?entityId=:entityId`
+
+`entityId` is required.
 
 ## Documents
 
@@ -206,6 +212,8 @@ owner of `entities[1]`.
 	entityId
 	residenceIdId
 ```
+
+`entityId` is required.
 
 ## Files
 
