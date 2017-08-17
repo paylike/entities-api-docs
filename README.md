@@ -102,6 +102,10 @@ curl -i https://pawns/entities/$ID \
 
 A successful request will return a `200` status code.
 
+Most responses will include an `id` which is system-wide unique, and a
+`creatorId` referencing the identity who added the data. The date of creation
+can be extracted from the ID ([see this example](https://github.com/srcagency/date-from-object-id)).
+
 ## Identities
 
 ### Create an identity
@@ -117,6 +121,7 @@ Returns:
 ```js
 {
 	id: String,
+	creatorId: String,
 	key: String,
 }
 ```
@@ -280,6 +285,7 @@ Returns:
 ```js
 {
 	id,
+	creatorId,
 	created,
 	entityId,
 	residenceId,
