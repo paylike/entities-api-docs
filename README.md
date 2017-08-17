@@ -275,6 +275,24 @@ owner of `entities[1]`.
 
 `/documents/:id`
 
+Returns:
+
+```js
+{
+	id,
+	created,
+	entityId,
+	residenceId,
+	tags,
+
+	file: {
+		id,
+		type,
+		name,
+	},
+}
+```
+
 ### Search documents
 
 ```
