@@ -321,8 +321,10 @@ Requires a `Content-Type` HTTP header with the media/mime type of the file
 Optional HTTP headers:
 
 ```
-X-Filename		# Name of file
+X-Filename		# URI encoded name of file
 ```
+
+URI encoding as per [`encodeURIComponent`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent).
 
 *Expects the request body to be the binary data*
 
