@@ -114,8 +114,6 @@ can be extracted from the ID ([see this example](https://github.com/srcagency/da
 
 This endpoint accepts no data.
 
-This endpoint requires no authentication.
-
 Returns:
 
 ```js
