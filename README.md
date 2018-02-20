@@ -30,6 +30,9 @@
 
 This API is exposed using the HTTP protocol.
 
+The API is immutable meaning updates are not supported and any change in the
+data should be represented by a new entity.
+
 ### Request
 
 Any response body must be either `JSON` encoded with a `Content-Type` header
