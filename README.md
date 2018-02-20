@@ -237,7 +237,9 @@ registries or social security systems.
 
 ## Relationships
 
-Relationships are a way to describe how two entities are related.
+Relationships are a way to describe how two entities are related. Notice that
+entities might have multiple relationships e.g. when related in more than one
+way.
 
 ### Create a relationship
 
