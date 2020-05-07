@@ -161,6 +161,7 @@ Set one of `individual` or `corporation` to `true`.
 	corporation: Boolean,
 
 	name: String,			// legal name (max length: 256)
+	incorporationType: String, // incorporation type key
 
 	// registered birth or official incorporation
 	birth: {
