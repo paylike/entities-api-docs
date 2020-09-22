@@ -41,7 +41,8 @@ file uploads).
 
 #### Authentication and authorization
 
-Most endpoints require you to authenticate.
+Most endpoints require you to authenticate. Please reach out at hello@paylike.io
+to get an API key.
 
 Supply an API key as the username part of a HTTP basic authentication.
 
