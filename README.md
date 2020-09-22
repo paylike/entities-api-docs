@@ -41,8 +41,7 @@ file uploads).
 
 #### Authentication and authorization
 
-Most endpoints require you to authenticate. [Create an identity](#create-an-
-identity) to get an API key.
+Most endpoints require you to authenticate.
 
 Supply an API key as the username part of a HTTP basic authentication.
 
