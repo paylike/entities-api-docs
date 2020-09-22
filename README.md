@@ -2,29 +2,29 @@
 
 - [Basics](#basics)
 - [Identities](#identities)
-	- [Create an identity](#create-an-identity)
+  - [Create an identity](#create-an-identity)
 - [Privileges](#privileges)
-	- [Create a privilege](#create-a-privilege)
+  - [Create a privilege](#create-a-privilege)
 - [Entities](#entities)
-	- [Create an entity](#create-an-entity)
-	- [Fetch an entity](#fetch-an-entity)
+  - [Create an entity](#create-an-entity)
+  - [Fetch an entity](#fetch-an-entity)
 - [Residences](#residences)
-	- [Create a residence](#create-a-residence)
-	- [Fetch a residence](#fetch-a-residence)
-	- [Search residences](#search-residences)
+  - [Create a residence](#create-a-residence)
+  - [Fetch a residence](#fetch-a-residence)
+  - [Search residences](#search-residences)
 - [Links](#links)
-	- [Create a link](#create-a-link)
-	- [Search links](#search-links)
+  - [Create a link](#create-a-link)
+  - [Search links](#search-links)
 - [Relationships](#relationships)
-	- [Create a relationship](#create-a-relationship)
-	- [Search relationships](#search-relationships)
+  - [Create a relationship](#create-a-relationship)
+  - [Search relationships](#search-relationships)
 - [Documents](#documents)
-	- [Create a document](#create-a-document)
-	- [Fetch a document](#fetch-a-document)
-	- [Search documents](#search-documents)
+  - [Create a document](#create-a-document)
+  - [Fetch a document](#fetch-a-document)
+  - [Search documents](#search-documents)
 - [Files](#files)
-	- [Create (upload) a file](#create-upload-a-file)
-	- [Fetch (download) a file](#fetch-download-a-file)
+  - [Create (upload) a file](#create-upload-a-file)
+  - [Fetch (download) a file](#fetch-download-a-file)
 
 ## Basics
 
@@ -35,9 +35,9 @@ data should be represented by a new resource.
 
 ### Request
 
-Any response body must be either `JSON` encoded with a `Content-Type` header
-set to `application/json` or binary with a corresponding `Content-Type` (e.g.
-for file uploads).
+Any response body must be either `JSON` encoded with a `Content-Type` header set
+to `application/json` or binary with a corresponding `Content-Type` (e.g. for
+file uploads).
 
 #### Authentication and authorization
 
@@ -60,9 +60,9 @@ curl -i -u $API_KEY https://pawns/entities/ping
 
 All successful responses will have status codes in the 200-299 range.
 
-The content type, if data is returned, will be `application/x-ndjson;
-charset=utf-8`. [NDJSON](http://ndjson.org/) simply means JSON but with top
-level arrays delimited by newlines.
+The content type, if data is returned, will be
+`application/x-ndjson; charset=utf-8`. [NDJSON](http://ndjson.org/) simply means
+JSON but with top level arrays delimited by newlines.
 
 Error codes:
 
@@ -85,8 +85,7 @@ curl -i https://pawns/entities \
 
 Attributes marked with `*` in these docs are required.
 
-A successful request will return a `201` status code and data with a format
-of:
+A successful request will return a `201` status code and data with a format of:
 
 ```js
 {
@@ -107,7 +106,8 @@ A successful request will return a `200` status code.
 
 Most responses will include an `id` which is system-wide unique, and a
 `creatorId` referencing the identity who added the data. The date of creation
-can be extracted from the ID ([see this example](https://github.com/srcagency/date-from-object-id)).
+can be extracted from the ID
+([see this example](https://github.com/srcagency/date-from-object-id)).
 
 ## Identities
 
@@ -251,8 +251,8 @@ way.
 }
 ```
 
-An example `type` would be `owner` in which case `entities[0]` would be an
-owner of `entities[1]`.
+An example `type` would be `owner` in which case `entities[0]` would be an owner
+of `entities[1]`.
 
 ### Search relationships
 
@@ -319,8 +319,8 @@ Returns:
 
 `/files`
 
-Requires a `Content-Type` HTTP header with the media/mime type of the file
-(e.g. image/jpeg).
+Requires a `Content-Type` HTTP header with the media/mime type of the file (e.g.
+image/jpeg).
 
 Optional HTTP headers:
 
@@ -328,9 +328,10 @@ Optional HTTP headers:
 X-Filename		# URI encoded name of file
 ```
 
-URI encoding as per [`encodeURIComponent`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent).
+URI encoding as per
+[`encodeURIComponent`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent).
 
-*Expects the request body to be the binary data*
+_Expects the request body to be the binary data_
 
 ### Fetch (download) a file
 
