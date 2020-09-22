@@ -1,4 +1,4 @@
-# API
+# entities.paylike.io
 
 - [Basics](#basics)
 - [Identities](#identities)
@@ -52,7 +52,7 @@ Authorization: Basic $(echo $API_KEY | base64)
 Using cURL:
 
 ```shell
-curl -i -u $API_KEY https://hostname/ping
+curl -i -u $API_KEY https://entities.paylike.io/ping
 ```
 
 ### Response
@@ -77,7 +77,7 @@ Error codes:
 Use the HTTP `POST` method to submit data.
 
 ```shell
-curl -i https://hostname/entities \
+curl -i https://entities.paylike.io/entities \
 	-H 'Content-Type: application/json' \
 	-d <data>
 ```
@@ -97,7 +97,7 @@ A successful request will return a `201` status code and data with a format of:
 Use the HTTP `GET` method to fetch data.
 
 ```shell
-curl -i https://hostname/entities/$ID \
+curl -i https://entities.paylike.io/entities/$ID \
 	-H 'Accept-Type: application/x-ndjson'
 ```
 
