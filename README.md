@@ -1,4 +1,4 @@
-# Pawns API
+# API
 
 - [Basics](#basics)
 - [Identities](#identities)
@@ -53,7 +53,7 @@ Authorization: Basic $(echo $API_KEY | base64)
 Using cURL:
 
 ```shell
-curl -i -u $API_KEY https://pawns/entities/ping
+curl -i -u $API_KEY https://hostname/ping
 ```
 
 ### Response
@@ -78,7 +78,7 @@ Error codes:
 Use the HTTP `POST` method to submit data.
 
 ```shell
-curl -i https://pawns/entities \
+curl -i https://hostname/entities \
 	-H 'Content-Type: application/json' \
 	-d <data>
 ```
@@ -98,7 +98,7 @@ A successful request will return a `201` status code and data with a format of:
 Use the HTTP `GET` method to fetch data.
 
 ```shell
-curl -i https://pawns/entities/$ID \
+curl -i https://hostname/entities/$ID \
 	-H 'Accept-Type: application/x-ndjson'
 ```
 
