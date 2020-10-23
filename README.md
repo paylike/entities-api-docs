@@ -199,6 +199,18 @@ the new entity.
 }
 ```
 
+Use the following structure for `address`:
+
+```
+street
+street 2nd line
+postal code
+city
+```
+
+Leave inapplicable lines empty (often the 2nd street line), but keep the
+newlines, for instance: `1600 Pennsylvania Avenue NW\n\n20500\nWashington, DC`.
+
 ### Fetch a residence
 
 `/residences/:id`
