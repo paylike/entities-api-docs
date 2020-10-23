@@ -79,8 +79,8 @@ Use the HTTP `POST` method to submit data.
 
 ```shell
 curl -i https://entities.paylike.io/entities \
-	-H 'Content-Type: application/json' \
-	-d <data>
+  -H 'Content-Type: application/json' \
+  -d <data>
 ```
 
 Attributes marked with `*` in these docs are required.
@@ -89,7 +89,7 @@ A successful request will return a `201` status code and data with a format of:
 
 ```js
 {
-	id: String,
+  id: String,
 }
 ```
 
@@ -99,7 +99,7 @@ Use the HTTP `GET` method to fetch data.
 
 ```shell
 curl -i https://entities.paylike.io/entities/$ID \
-	-H 'Accept-Type: application/x-ndjson'
+  -H 'Accept-Type: application/x-ndjson'
 ```
 
 A successful request will return a `200` status code.
@@ -121,9 +121,9 @@ Returns:
 
 ```js
 {
-	id: String,
-	creatorId: String,
-	key: String,
+  id: String,
+  creatorId: String,
+  key: String,
 }
 ```
 
@@ -138,8 +138,8 @@ implicitly means read and write access to an entity.
 
 ```js
 {
-	identityId: String*,	// existing identity ID
-	entityId: String*,		// existing entity ID
+  identityId: String*,  // existing identity ID
+  entityId: String*,    // existing entity ID
 }
 ```
 
@@ -156,24 +156,24 @@ Set one of `individual` or `corporation` to `true`.
 
 ```js
 {
-	// mutually exclusive
-	individual: Boolean,
-	corporation: Boolean,
+  // mutually exclusive
+  individual: Boolean,
+  corporation: Boolean,
 
-	name: String,			// legal name (max length: 256)
-	incorporationType: String, // incorporation type key
+  name: String,     // legal name (max length: 256)
+  incorporationType: String, // incorporation type key
 
-	// registered birth or official incorporation
-	birth: {
-		// optional as a whole
-		date: {
-			year: Number*,	// four digits year
-			month: Number*,	// month (1-12)
-			day: Number*,	// day (1-31)
-		},
+  // registered birth or official incorporation
+  birth: {
+    // optional as a whole
+    date: {
+      year: Number*,  // four digits year
+      month: Number*, // month (1-12)
+      day: Number*, // day (1-31)
+    },
 
-		country: String,	// ISO 3166-1 alpha2 code
-	},
+    country: String,  // ISO 3166-1 alpha2 code
+  },
 }
 ```
 
@@ -192,10 +192,10 @@ the new entity.
 
 ```js
 {
-	entityId: String*,	// existing entity ID
-	domicile: Boolean,	// headquarter, primary address
-	address: String,	// official address (max length: 512)
-	country: String,	// ISO 3166-1 alpha2 code
+  entityId: String*,  // existing entity ID
+  domicile: Boolean,  // headquarter, primary address
+  address: String,  // official address (max length: 512)
+  country: String,  // ISO 3166-1 alpha2 code
 }
 ```
 
@@ -234,11 +234,11 @@ registries or social security systems.
 
 ```js
 {
-	entityId: String*,	// existing entity ID
-	system: {
-		id: String*,	// identifier of the external system (length: 1-64)
-		key: String*,	// primary key in the external system (length: 1-128)
-	},
+  entityId: String*,  // existing entity ID
+  system: {
+    id: String*,  // identifier of the external system (length: 1-64)
+    key: String*, // primary key in the external system (length: 1-128)
+  },
 }
 ```
 
@@ -260,8 +260,8 @@ way.
 
 ```js
 {
-	entities: Array*,	// array of existing entity IDs (length: 2)
-	type: String*,		// nature of relationship (length: 1-64)
+  entities: Array*, // array of existing entity IDs (length: 2)
+  type: String*,    // nature of relationship (length: 1-64)
 }
 ```
 
@@ -282,15 +282,15 @@ of `entities[1]`.
 
 ```js
 {
-	entityId: String*,		// existing entity ID
-	fileId: String*,		// existing file ID (UUID)
+  entityId: String*,    // existing entity ID
+  fileId: String*,    // existing file ID (UUID)
 
-	// optional
-	tags: Array(String),	// max length: 16, strings length: 1-64
+  // optional
+  tags: Array(String),  // max length: 16, strings length: 1-64
 
-	// specifies that this document is related somehow to a residence, it
-	// might be a "proof of address".
-	residenceId: String,	// existing residence ID
+  // specifies that this document is related somehow to a residence, it
+  // might be a "proof of address".
+  residenceId: String,  // existing residence ID
 }
 ```
 
@@ -302,18 +302,18 @@ Returns:
 
 ```js
 {
-	id,
-	creatorId,
-	created,
-	entityId,
-	residenceId,
-	tags,
+  id,
+  creatorId,
+  created,
+  entityId,
+  residenceId,
+  tags,
 
-	file: {
-		id,
-		type,
-		name,
-	},
+  file: {
+    id,
+    type,
+    name,
+  },
 }
 ```
 
@@ -321,8 +321,8 @@ Returns:
 
 ```
 /documents?
-	entityId
-	residenceId
+  entityId
+  residenceId
 ```
 
 `entityId` is required.
@@ -339,7 +339,7 @@ image/jpeg).
 Optional HTTP headers:
 
 ```
-X-Filename		# URI encoded name of file
+X-Filename    # URI encoded name of file
 ```
 
 URI encoding as per
