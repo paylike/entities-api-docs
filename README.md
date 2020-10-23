@@ -244,6 +244,8 @@ way.
 
 ### Create a relationship
 
+`/relationships`
+
 ```js
 {
 	entities: Array*,	// array of existing entity IDs (length: 2)
